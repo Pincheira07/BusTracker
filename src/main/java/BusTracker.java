@@ -1,49 +1,50 @@
 import java.util.Scanner;
-
-public class BusTracker{
+public class BusTracker {
     public static void main(String[] args) {
         iniciarAplicacion();
     }
+
     public static void iniciarAplicacion() {
-        iniciarMenu();
+        ejecutarMenu();
     }
 
-    private static void iniciarMenu() {
-        mostrarMenu();
-        int opcion = leerOpcionMenu();
-        if (!validarOpcionMenu(opcion)){
-            System.out.println("Valor fuera de rango");
-        }else{
-            ejecutarMenu(opcion);
-        }
-    }
-
-    private static int leerOpcionMenu() {
+    private static String leerOpcionMenu() {
         var scanner = new Scanner(System.in);
         System.out.println("Ingrese una opción:");
-        return scanner.nextInt();
+        return scanner.next();
     }
 
-    public static boolean validarOpcionMenu(int opcion) {
-        return -1 < opcion && opcion < 5;
-    }
 
-    public static void ejecutarMenu(int opcion) {
+    public static void ejecutarMenu() {
+        int aux=0;
+        do {
+            mostrarMenu();
+            String opcion = leerOpcionMenu();
         switch (opcion) {
-            case 1 -> {
+            case "1":
                 System.out.println("Iniciando sesion...");
                 System.out.println("Bienvenido pasajero");
-            }
-            case 2 -> {
+                aux=0;
+                break;
+
+            case "2":
                 System.out.println("Iniciando sesion...");
                 System.out.println("Bienvenido conductor");
                 compartirUbicacion();
-            }
-            case 0 -> System.exit(0);
+                aux=0;
+                break;
+
+            case "0":
+                aux=1;
+                break;
+
+            default:
+                aux=0;
+                System.err.println("Opcion ingresada no valida");
         }
+        }while (aux==0);
+
     }
-
-
 
     public static void mostrarMenu(){
         System.out.println("***********************************************************");
