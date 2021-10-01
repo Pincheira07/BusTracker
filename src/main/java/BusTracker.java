@@ -5,43 +5,15 @@ public class BusTracker {
     public static void main(String[] args) throws IOException {
         iniciarAplicacion();
     }
+
     public static void iniciarAplicacion() throws IOException {
         ejecutarMenu();
     }
+
     private static String leerOpcionMenu() {
         var scanner = new Scanner(System.in);
         System.out.println("Ingrese una opción:");
         return scanner.next();
-    }
-    public static void ejecutarMenu() throws IOException {
-        int aux=0;
-        do {
-            mostrarMenu();
-            String opcion = leerOpcionMenu();
-        switch (opcion) {
-            case "1":
-                System.out.println("Iniciando sesion...");
-                System.out.println("Bienvenido pasajero");
-                ejecutarConsultaUbicacion();
-                aux=0;
-                break;
-
-            case "2":
-                System.out.println("Iniciando sesion...");
-                ingresarDatosUser();
-                aux=0;
-                break;
-
-            case "0":
-                aux=1;
-                break;
-
-            default:
-                aux=0;
-                System.err.println("Opcion ingresada no valida");
-        }
-        }while (aux==0);
-
     }
 
     public static void mostrarMenu(){
@@ -52,6 +24,28 @@ public class BusTracker {
         System.out.println("[2]Conductor");
         System.out.println("[0]Salir");
         System.out.println("***********************************************************");
+    }
+
+    public static void ejecutarMenu() throws IOException {
+        int aux=0;
+        do {
+            mostrarMenu();
+            String opcion = leerOpcionMenu();
+            switch (opcion) {
+                case "1" -> {
+                    System.out.println("Iniciando sesion...");
+                    System.out.println("Bienvenido pasajero");
+                    ejecutarConsultaUbicacion();
+                }
+                case "2" -> {
+                    System.out.println("Iniciando sesion...");
+                    ingresarDatosUser();
+                }
+                case "0" -> aux = 1;
+                default -> System.err.println("Opcion ingresada no valida");
+            }
+        }while (aux==0);
+
     }
 
     public static void ejecutarConsultaUbicacion(){
@@ -72,8 +66,6 @@ public class BusTracker {
 
 
     }
-
-
 
     public static void compartirUbicacion() throws IOException {
         entregarCoordenadas(leerArchivo("Linea1A.csv"));
@@ -99,13 +91,13 @@ public class BusTracker {
         * */
         String[] coordendas;
 
-        for (int i = 0; i < arr.size(); i++) {
+        for (String s : arr) {
             try {
                 Thread.sleep(3930);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            coordendas = arr.get(i).split(",");
+            coordendas = s.split(",");
             escribirCoordenadas(coordendas[0], coordendas[1]);
         }
 
@@ -127,8 +119,37 @@ public class BusTracker {
         csvWriter.flush();
         csvWriter.close();
     }
-    public static String[][] iniciarSesion() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("Usuarios"));
+
+    public static void ingresarDatosUser() throws IOException {
+        Scanner tecla = new Scanner(System.in);
+        System.out.println("Ingrese su nombre de usuario");
+        String usuario = tecla.next();
+        System.out.println("Ingrese la cotraseña");
+        String contraseña = tecla.next();
+        if(validarUser(usuario, contraseña)){
+            System.out.println("Bienvenido conductor");
+            compartirUbicacion();
+        }
+        else{
+            System.out.println("Usuario no registrado o contraseña erronea");
+        }
+    }
+
+    public static boolean validarUser(String usuario, String contraseña){
+        String[][] arr;
+        arr = leerUsuario();
+        assert arr != null;
+        for (String[] strings : arr) {
+            if (strings[0].equals(usuario) && strings[1].equals(contraseña)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static String[][] leerUsuario(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("Usuarios"));
             String[][] arr = new String[5][2];
             ArrayList<String> arr1;
             int i = 0;
@@ -141,44 +162,22 @@ public class BusTracker {
                 }
                 i++;
             }
-        return arr;
-    }
-    public static void ingresarDatosUser() throws IOException {
-        Scanner tecla = new Scanner(System.in);
-        System.out.println("Ingrese su nombre de usuario");
-        String usuario = tecla.next();
-        System.out.println("Ingrese la cotraseña");
-        String contraseña = tecla.next();
-        if(validarUser(usuario,contraseña)==true){
-            System.out.println("Bienvenido conductor");
-            compartirUbicacion();
-        }
-        else{
-            System.out.println("Usuario no registrado o contraseña erronea");
+            return arr;
+        }catch (IOException e){
+            System.err.println("Archivo no encontrado");
+            return null;
         }
     }
-    public static boolean validarUser(String usuario, String contraseña) throws IOException {
-        String[][] arr;
-        arr = iniciarSesion();
-        for(int i =0;i< arr.length;i++) {
-            if (arr[i][0].equals(usuario) && arr[i][1].equals(contraseña)) {
-                return true;
-            }
-        }
-    return false;
-    }
-    public static ArrayList separarString(String linea){
+
+    public static ArrayList<String> separarString(String linea){
         String palabra;
         ArrayList<String> arr = new ArrayList<>();
-        int numTokens = 0;
         StringTokenizer st = new StringTokenizer (linea);
         while (st.hasMoreTokens())
         {
             palabra = st.nextToken();
             arr.add(palabra);
-            numTokens++;
         }
         return arr;
     }
-
 }
