@@ -6,7 +6,7 @@ import java.util.*;
 
 public class BusTracker{
     public static void main(String[] args) throws IOException {
-        iniciarAplicacion();
+
     }
     public static void iniciarAplicacion() throws IOException {
         iniciarMenu();
@@ -133,6 +133,176 @@ public class BusTracker{
         csvWriter.flush();
         csvWriter.close();
     }
+
+    public static void menuPasajero() {
+            System.out.println(".........{   Seleccione un paradero   }........");
+        System.out.println("[1] Paradero 1");
+        System.out.println("[2] Paradero 2");
+        System.out.println("[3] VOLVER ATRAS");
+
+    }
+    public static void menudeLineasDisponibles() {
+        System.out.println(".........{Lineas Disponibles }........");
+        System.out.println("[1] Linea 1");
+        System.out.println("[2] Linea 2");
+        System.out.println("[3] VOLVER ATRAS");
+
+    }
+    public static void menuSelecciondeMicro() {
+        System.out.println(".........{MICROS DISPONIBLES }........");
+        System.out.println("[1] Micro 1");
+        System.out.println("[2] Micro 2");
+        System.out.println("[3] VOLVER ATRAS");
+
+    }
+    public static void menuConductor() {
+        System.out.println(".........{ SELECCIONE  }........");
+        System.out.println("[1] CONFIGURACION DE RECORRIDO ");
+        System.out.println("[2] SELECCIONAR LINEA");
+        System.out.println("[3] VOLVER ATRAS");
+
+    }
+    public static void menudeLineasDisponiblesConductor() {
+        System.out.println(".........{Lineas Disponibles }........");
+        System.out.println("[1] Linea 1");
+        System.out.println("[2] Linea 2");
+        System.out.println("[3] VOLVER ATRAS");
+
+    }
+
+
+
+
+
+    public static int selecionOpciones(int menu) {
+        int opcion = 0;
+        int cantOP= cantidadOpcionesMenuPrincipal();
+        do {
+            try {
+                definirElMenuMostrar(menu);
+                opcion = pedirDatoNumerico();
+                if (opcion <= 0 || opcion >= cantOP + 1) {
+                    System.out.println("No existe esa opcion");
+                    System.out.println("Selecione una correcta");
+                }
+
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("No es una exprecion numerica");
+                System.out.println("Por favor intentelo denuevo");
+
+
+            }
+
+        } while (opcion <= 0 || opcion >= cantOP + 1);
+
+        return opcion;
+
+    }
+
+    public static String pedirDatoString() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println(".......[INGRESE UNA ENTRADA VALIDA]......");
+
+        return teclado.nextLine().toLowerCase().replace(" ", "").replace(".", "").replace(",", "");
+    }
+
+    public static void menuSalida(){
+        System.out.println(".........{Desea Repetir proceso}........");
+        System.out.println("Desea salir");
+        System.out.println("[1] Si");
+        System.out.println("[3] no");
+
+
+    }
+    public static int cantidadOpcionesMenuPrincipal(){
+        return 3;
+
+
+    }
+
+    public static int validarRangodeNumero(int numero1) {
+        if (numero1 < 0) {
+            System.out.println("No se admiten numeros negativos");
+        } else if (numero1 > 100) {  // recordar definir un limite
+            System.out.println("No se admiten numeros mayores a 100");
+            numero1 = -1;
+
+        }
+        return numero1;
+    }
+    public static int pedirDatoNumerico() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println(".......[INGRESE UNA ENTRADA VALIDA]......");
+
+        return  teclado.nextInt();
+    }
+
+    public static void definirElMenuMostrar(int menu){
+        if (menu == 1) {
+            menuPasajero();
+        } else if( menu==2){
+            menudeLineasDisponibles();
+        }else if( menu==3){
+            menuSelecciondeMicro();
+        }else if( menu==4){
+            menuConductor();
+        } else if( menu==5){
+            menudeLineasDisponiblesConductor();
+        }
+
+
+
+    }
+    public static void arranqueConductor(){
+        int nivel=4;
+        do {
+            nivel=resoluciondeopciones(nivel);
+            if (nivel>6){
+                nivel=3;
+
+            }
+
+        }while(nivel != 3);
+
+
+
+
+    }
+
+
+
+    public static void arranquePasajero(){
+        int nivel=1;
+        do {
+            nivel=resoluciondeopciones(nivel);
+            if (nivel>3){
+                nivel=0;
+
+            }
+
+        }while(nivel != 0);
+
+
+
+
+    }
+    public static int resoluciondeopciones(int menu){
+        switch (selecionOpciones(menu)) {
+            case 1 -> {
+                menu+=1;
+            }
+            case 2-> {
+                menu+=1;
+
+            }
+            case 3 -> {
+                menu -=1;
+                break;
+            }
+        }
+        return menu;
+    }
+
 
 
 }
