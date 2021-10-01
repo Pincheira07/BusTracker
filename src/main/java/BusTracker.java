@@ -13,13 +13,16 @@ public class BusTracker{
     }
 
     private static void iniciarMenu() throws IOException {
-        mostrarMenu();
-        int opcion = leerOpcionMenu();
-        if (!validarOpcionMenu(opcion)){
-            System.out.println("Valor fuera de rango");
-        }else{
-            ejecutarMenu(opcion);
+        while (true){
+            mostrarMenu();
+            int opcion = leerOpcionMenu();
+            if (!validarOpcionMenu(opcion)){
+                System.out.println("Valor fuera de rango");
+            }else{
+                ejecutarMenu(opcion);
+            }
         }
+
     }
 
     private static int leerOpcionMenu() {
@@ -29,19 +32,18 @@ public class BusTracker{
     }
 
     public static boolean validarOpcionMenu(int opcion) {
-        return -1 < opcion && opcion < 5;
+        return -1 < opcion && opcion < 3;
     }
 
     public static void ejecutarMenu(int opcion) throws IOException {
+
         switch (opcion) {
             case 1 -> {
-                System.out.println("Iniciando sesion...");
-                System.out.println("Bienvenido pasajero");
+                System.out.println("Su bus se encuentra en: ");
                 ejecutarConsultaUbicacion();
             }
             case 2 -> {
-                System.out.println("Iniciando sesion...");
-                System.out.println("Bienvenido conductor");
+                System.out.println("Compartiendo Ubicacion");
                 compartirUbicacion();
             }
             case 0 -> System.exit(0);
@@ -110,7 +112,6 @@ public class BusTracker{
         * llama al metodo "escribirCoordenadas"
         * */
         String[] coordendas;
-
         for (int i = 0; i < arr.size(); i++) {
             try {
                 Thread.sleep(3930);
