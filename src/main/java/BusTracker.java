@@ -251,7 +251,6 @@ public class BusTracker{
         }
 
 
-
     }
     public static void arranqueConductor(){
         int nivel=4;
