@@ -61,15 +61,14 @@ public class BusTracker{
     }
 
     public static void ejecutarConsultaUbicacion(){
-        try {
-            mostrarUbicacion(leerArchivo("movimiento.csv"));
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
+        mostrarUbicacion(leerArchivo("movimiento.csv"));
 
     }
 
     public static void mostrarUbicacion(ArrayList<String> arrayList){
+        /*
+        * Muestra la ubicacion en consola para el pasajero
+        * */
         String[] coordendas;
         for (int i = 0; i < arrayList.size();i++) {
             coordendas = arrayList.get(0).split(",");
@@ -85,23 +84,30 @@ public class BusTracker{
         entregarCoordenadas(leerArchivo("Linea1A.csv"));
     }
 
-    public static ArrayList<String> leerArchivo(String ruta) throws IOException {
+    public static ArrayList<String> leerArchivo(String ruta){
         /*
         * Lee el archivo y añade cada linea a un arraylist
         */
         File file = new File(ruta);
-        Scanner input = new Scanner(file);
         ArrayList<String> arr = new ArrayList<>();
-        while (input.hasNextLine()) {
-            arr.add(input.nextLine());
+        Scanner input = null;
+        try {
+            input = new Scanner(file);
+            while (input.hasNextLine()) {
+                arr.add(input.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("No hay recorridos disponibles");;
         }
+
         return arr;
+
     }
 
     public static void entregarCoordenadas(ArrayList<String> arr) throws IOException{
         /*
         * Crea un array de strings para la linea actual y lo divide en latitud y longitud, luego,
-        * llama al metodo "escribirCoordenadas
+        * llama al metodo "escribirCoordenadas"
         * */
         String[] coordendas;
 
