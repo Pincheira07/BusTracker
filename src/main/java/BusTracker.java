@@ -1,7 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class BusTracker {
     public static void main(String[] args) throws IOException {
@@ -31,7 +29,6 @@ public class BusTracker {
             case "2":
                 System.out.println("Iniciando sesion...");
                 ingresarDatosUser();
-                compartirUbicacion();
                 aux=0;
                 break;
 
@@ -154,6 +151,7 @@ public class BusTracker {
         String contraseña = tecla.next();
         if(validarUser(usuario,contraseña)==true){
             System.out.println("Bienvenido conductor");
+            compartirUbicacion();
         }
         else{
             System.out.println("Usuario no registrado o contraseña erronea");
