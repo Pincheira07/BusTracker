@@ -34,7 +34,7 @@ public class BusTracker{
                 case "1" -> {
                     System.out.println("Iniciando sesion...");
                     System.out.println("Bienvenido pasajero");
-                    ejecutarConsultaUbicacion();
+                    arranquePasajero();
                 }
                 case "2" -> {
                     System.out.println("Iniciando sesion...");
@@ -48,12 +48,7 @@ public class BusTracker{
     }
 
     public static void ejecutarConsultaUbicacion(){
-        try {
             mostrarUbicacion(leerArchivo("movimiento.csv"));
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-
     }
 
     public static void mostrarUbicacion(ArrayList<String> arrayList){
@@ -62,25 +57,25 @@ public class BusTracker{
             coordendas = arrayList.get(0).split(",");
             System.out.println("Latitud: " + coordendas[0] + " Longitud: " + coordendas[1]);
         }
-
-
     }
-
-
-
     public static void compartirUbicacion() throws IOException {
         entregarCoordenadas(leerArchivo("Linea1A.csv"));
     }
 
-    public static ArrayList<String> leerArchivo(String ruta) throws IOException {
+    public static ArrayList<String> leerArchivo(String ruta){
         /*
-        * Lee el archivo y añade cada linea a un arraylist
-        */
+         * Lee el archivo y añade cada linea a un arraylist
+         */
         File file = new File(ruta);
-        Scanner input = new Scanner(file);
         ArrayList<String> arr = new ArrayList<>();
-        while (input.hasNextLine()) {
-            arr.add(input.nextLine());
+        Scanner input = null;
+        try {
+            input = new Scanner(file);
+            while (input.hasNextLine()) {
+                arr.add(input.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("No hay recorridos disponibles");;
         }
         return arr;
     }
@@ -121,20 +116,6 @@ public class BusTracker{
         csvWriter.close();
     }
 
-    public static void ingresarDatosUser() throws IOException {
-        Scanner tecla = new Scanner(System.in);
-        System.out.println("Ingrese su nombre de usuario");
-        String usuario = tecla.next();
-        System.out.println("Ingrese la cotraseña");
-        String contraseña = tecla.next();
-        if(validarUser(usuario, contraseña)){
-            System.out.println("Bienvenido conductor");
-            compartirUbicacion();
-        }
-        else{
-            System.out.println("Usuario no registrado o contraseña erronea");
-        }
-    }
 
     public static boolean validarUser(String usuario, String contraseña){
         String[][] arr;
@@ -147,13 +128,7 @@ public class BusTracker{
         }
         return false;
     }
-    public static void menuPasajero() {
-            System.out.println(".........{   Seleccione un paradero   }........");
-        System.out.println("[1] Paradero 1");
-        System.out.println("[2] Paradero 2");
-        System.out.println("[3] VOLVER ATRAS");
 
-    }
     public static void menudeLineasDisponibles() {
         System.out.println(".........{Lineas Disponibles }........");
         System.out.println("[1] Linea 1");
@@ -161,31 +136,6 @@ public class BusTracker{
         System.out.println("[3] VOLVER ATRAS");
 
     }
-    public static void menuSelecciondeMicro() {
-        System.out.println(".........{MICROS DISPONIBLES }........");
-        System.out.println("[1] Micro 1");
-        System.out.println("[2] Micro 2");
-        System.out.println("[3] VOLVER ATRAS");
-
-    }
-    public static void menuConductor() {
-        System.out.println(".........{ SELECCIONE  }........");
-        System.out.println("[1] CONFIGURACION DE RECORRIDO ");
-        System.out.println("[2] SELECCIONAR LINEA");
-        System.out.println("[3] VOLVER ATRAS");
-
-    }
-    public static void menudeLineasDisponiblesConductor() {
-        System.out.println(".........{Lineas Disponibles }........");
-        System.out.println("[1] Linea 1");
-        System.out.println("[2] Linea 2");
-        System.out.println("[3] VOLVER ATRAS");
-
-    }
-
-
-
-
 
     public static int selecionOpciones(int menu) {
         int opcion = 0;
@@ -202,8 +152,6 @@ public class BusTracker{
             } catch (java.util.InputMismatchException e) {
                 System.out.println("No es una exprecion numerica");
                 System.out.println("Por favor intentelo denuevo");
-
-
             }
 
         } while (opcion <= 0 || opcion >= cantOP + 1);
@@ -211,26 +159,8 @@ public class BusTracker{
         return opcion;
 
     }
-
-    public static String pedirDatoString() {
-        Scanner teclado = new Scanner(System.in);
-        System.out.println(".......[INGRESE UNA ENTRADA VALIDA]......");
-
-        return teclado.nextLine().toLowerCase().replace(" ", "").replace(".", "").replace(",", "");
-    }
-
-    public static void menuSalida(){
-        System.out.println(".........{Desea Repetir proceso}........");
-        System.out.println("Desea salir");
-        System.out.println("[1] Si");
-        System.out.println("[3] no");
-
-
-    }
     public static int cantidadOpcionesMenuPrincipal(){
         return 3;
-
-
     }
 
     public static int validarRangodeNumero(int numero1) {
@@ -246,66 +176,44 @@ public class BusTracker{
     public static int pedirDatoNumerico() {
         Scanner teclado = new Scanner(System.in);
         System.out.println(".......[INGRESE UNA ENTRADA VALIDA]......");
-
         return  teclado.nextInt();
     }
 
     public static void definirElMenuMostrar(int menu){
         if (menu == 1) {
-            menuPasajero();
-        } else if( menu==2){
             menudeLineasDisponibles();
-        }else if( menu==3){
-            menuSelecciondeMicro();
-        }else if( menu==4){
-            menuConductor();
-        } else if( menu==5){
-            menudeLineasDisponiblesConductor();
         }
-
-
     }
-    public static void arranqueConductor(){
+    public static void arranqueConductor() throws IOException {
         int nivel=4;
         do {
-            nivel=resoluciondeopciones(nivel);
+            nivel=definirLinea(nivel);
             if (nivel>6){
                 nivel=3;
-
             }
-
         }while(nivel != 3);
-
-
-
-
     }
-
-
-
-    public static void arranquePasajero(){
+    public static void arranquePasajero() throws IOException {
         int nivel=1;
         do {
-            nivel=resoluciondeopciones(nivel);
+            nivel=definirLineaPasajero(nivel);
             if (nivel>3){
                 nivel=0;
-
             }
-
         }while(nivel != 0);
-
-
-
-
     }
-    public static int resoluciondeopciones(int menu){
+
+    public static int definirLinea(int menu) throws IOException {
+        menudeLineasDisponibles();
         switch (selecionOpciones(menu)) {
             case 1 -> {
-                menu+=1;
+                System.out.println("Compartiendo Ubicacion");
+                compartirUbicacion();
+                break;
             }
             case 2-> {
-                menu+=1;
-
+                System.out.println("Proximamente");
+                break;
             }
             case 3 -> {
                 menu -=1;
@@ -315,7 +223,36 @@ public class BusTracker{
         return menu;
     }
 
-
+    public static int definirLineaPasajero(int menu) throws IOException {
+        switch (selecionOpciones(menu)) {
+            case 1 -> {
+                ejecutarConsultaUbicacion();
+            }
+            case 2-> {
+                System.out.println("Proximamente");
+            }
+            case 3 -> {
+                menu -=1;
+                break;
+            }
+        }
+        return menu;
+    }
+    public static void ingresarDatosUser() throws IOException {
+        Scanner tecla = new Scanner(System.in);
+        System.out.println("Ingrese su nombre de usuario");
+        String usuario = tecla.next();
+        System.out.println("Ingrese la cotraseña");
+        String contraseña = tecla.next();
+        if(validarUser(usuario, contraseña)){
+            System.out.println("Bienvenido conductor");
+            arranqueConductor();
+            compartirUbicacion();
+        }
+        else{
+            System.out.println("Usuario no registrado o contraseña erronea");
+        }
+    }
 
     public static String[][] leerUsuario(){
         try {
@@ -350,4 +287,5 @@ public class BusTracker{
         }
         return arr;
     }
+
 }
