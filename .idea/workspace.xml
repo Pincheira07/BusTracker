@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ecb019e-697f-490c-85b3-8f970e05b61d" name="Changes" comment="Pruebas Unitarias">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Chofer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Inicio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Linea.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Micro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/OperacionesPasajero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Paradero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BusTracker.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/movimiento.csv" beforeDir="false" afterPath="$PROJECT_DIR$/movimiento.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BusTrackerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BusTrackerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
