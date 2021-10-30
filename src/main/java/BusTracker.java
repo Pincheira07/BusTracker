@@ -2,9 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class BusTracker{
-    public static void main(String[] args) throws IOException {
-        iniciarAplicacion();
-    }
+
     public static void iniciarAplicacion() throws IOException {
         ejecutarMenu();
     }
@@ -25,10 +23,10 @@ public class BusTracker{
         System.out.println("***********************************************************");
     }
 
-
     public static void ejecutarConsultaUbicacion(){
             mostrarUbicacion(leerArchivo("movimiento.csv"));
     }
+
     public static void ejecutarMenu() throws IOException {
         int aux=0;
         do {
@@ -42,7 +40,6 @@ public class BusTracker{
                 }
                 case "2" -> {
                     System.out.println("Iniciando sesion...");
-                    ingresarDatosUser();
                 }
                 case "0" -> aux = 1;
                 default -> System.err.println("Opcion ingresada no valida");
@@ -58,6 +55,7 @@ public class BusTracker{
             System.out.println("Latitud: " + coordendas[0] + " Longitud: " + coordendas[1]);
         }
     }
+
     public static void compartirUbicacion() throws IOException {
         entregarCoordenadas(leerArchivo("Linea1A.csv"));
     }
@@ -116,19 +114,6 @@ public class BusTracker{
         csvWriter.close();
     }
 
-
-    public static boolean validarUser(String usuario, String contraseña){
-        String[][] arr;
-        arr = leerUsuario();
-        assert arr != null;
-        for (String[] strings : arr) {
-            if (strings[0].equals(usuario) && strings[1].equals(contraseña)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static void menudeLineasDisponibles() {
         System.out.println(".........{Lineas Disponibles }........");
         System.out.println("[1] Linea 1");
@@ -159,6 +144,7 @@ public class BusTracker{
         return opcion;
 
     }
+
     public static int cantidadOpcionesMenuPrincipal(){
         return 3;
     }
@@ -173,6 +159,7 @@ public class BusTracker{
         }
         return numero1;
     }
+
     public static int pedirDatoNumerico() {
         Scanner teclado = new Scanner(System.in);
         System.out.println(".......[INGRESE UNA ENTRADA VALIDA]......");
@@ -184,6 +171,7 @@ public class BusTracker{
             menudeLineasDisponibles();
         }
     }
+
     public static void arranqueConductor() throws IOException {
         int nivel=4;
         do {
@@ -193,6 +181,7 @@ public class BusTracker{
             }
         }while(nivel != 3);
     }
+
     public static void arranquePasajero() throws IOException {
         int nivel=1;
         do {
@@ -238,54 +227,6 @@ public class BusTracker{
         }
         return menu;
     }
-    public static void ingresarDatosUser() throws IOException {
-        Scanner tecla = new Scanner(System.in);
-        System.out.println("Ingrese su nombre de usuario");
-        String usuario = tecla.next();
-        System.out.println("Ingrese la cotraseña");
-        String contraseña = tecla.next();
-        if(validarUser(usuario, contraseña)){
-            System.out.println("Bienvenido conductor");
-            arranqueConductor();
-            compartirUbicacion();
-        }
-        else{
-            System.out.println("Usuario no registrado o contraseña erronea");
-        }
-    }
 
-    public static String[][] leerUsuario(){
-        try {
-            BufferedReader br = new BufferedReader(new FileReader("Usuarios"));
-            String[][] arr = new String[5][2];
-            ArrayList<String> arr1;
-            int i = 0;
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                arr1 = separarString(linea);
-                for (int j = 0; j < arr1.size(); j++) {
-                    arr[i][j] = arr1.get(j);
-
-                }
-                i++;
-            }
-            return arr;
-        }catch (IOException e){
-            System.err.println("Archivo no encontrado");
-            return null;
-        }
-    }
-
-    public static ArrayList<String> separarString(String linea){
-        String palabra;
-        ArrayList<String> arr = new ArrayList<>();
-        StringTokenizer st = new StringTokenizer (linea);
-        while (st.hasMoreTokens())
-        {
-            palabra = st.nextToken();
-            arr.add(palabra);
-        }
-        return arr;
-    }
 
 }
