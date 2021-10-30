@@ -25,6 +25,10 @@ public class BusTracker{
         System.out.println("***********************************************************");
     }
 
+
+    public static void ejecutarConsultaUbicacion(){
+            mostrarUbicacion(leerArchivo("movimiento.csv"));
+    }
     public static void ejecutarMenu() throws IOException {
         int aux=0;
         do {
@@ -45,10 +49,6 @@ public class BusTracker{
             }
         }while (aux==0);
 
-    }
-
-    public static void ejecutarConsultaUbicacion(){
-            mostrarUbicacion(leerArchivo("movimiento.csv"));
     }
 
     public static void mostrarUbicacion(ArrayList<String> arrayList){
