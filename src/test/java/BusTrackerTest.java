@@ -64,5 +64,4 @@ class BusTrackerTest {
         ArrayList<String> arrlist = BusTracker.leerArchivo("Linea1A.csv");
         assertEquals("-38.75937,-72.64552", arrlist.get(850));
     }
-
 }
