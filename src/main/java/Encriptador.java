@@ -18,47 +18,16 @@ public class Encriptador {
         return ret;
     }
 
-    public void cifrarArchivo(int clave){
-        FileReader fr = null;
-        try {
-            File entradaf = new File(this.rutaUser);
-            File salidaf = new File(this.rutaEncrip);
-            fr = new FileReader(entradaf);
-            FileWriter fw = new FileWriter(salidaf);
-            BufferedWriter bw = new BufferedWriter(fw);
-            BufferedReader br = new BufferedReader(fr);
-            String linea = null;
-            while ((linea = br.readLine()) != null){
-                String cifrado = cifrar(linea,clave);
-                bw.write(cifrado);
-                bw.newLine();
-                bw.flush();
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public ArrayList<String> descifrarArchivo(int clave){
-        FileReader fr = null;
-        try {
-            File entradaf = new File(this.rutaEncrip);
-            fr = new FileReader(entradaf);
-            BufferedReader br = new BufferedReader(fr);
+            GestorArchivos ga = new GestorArchivos(this.rutaEncrip);
+            ArrayList<String> cifrado = ga.leerArchivo();
             String linea = null;
             ArrayList<String> usuarios = new ArrayList<>();
-            while ((linea = br.readLine()) != null){
-                String cifrado = cifrar(linea,clave);
-                usuarios.add(cifrado);
+            for (int i = 0; i<cifrado.size();i++){
+                linea = cifrado.get(i);
+                String descifrado = cifrar(linea,clave);
+                usuarios.add(descifrado);
             }
             return usuarios;
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 }

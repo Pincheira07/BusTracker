@@ -6,10 +6,6 @@ public class Paradero {
         return this.ubicacion;
     }
 
-    /**
-     *
-     * @param ubicacion
-     */
     public void setUbicacion(String ubicacion) {
         this.ubicacion = ubicacion;
     }

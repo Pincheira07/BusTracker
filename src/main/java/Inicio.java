@@ -17,12 +17,15 @@ public class Inicio {
                 case "1" -> {
                     System.out.println("Iniciando sesion...");
                     System.out.println("Bienvenido pasajero");
+                    OperacionesPasajero op = new OperacionesPasajero();
+                    op.mostrarUbicacion();
                     break;
                 }
                 case "2" -> {
                     System.out.println("Iniciando sesion...");
                     Chofer chofer = new Chofer();
                     chofer.ingresarDatosUser();
+                    chofer.compartirUbicacion("Linea1A");
                     break;
                 }
                 case "0" -> aux = 1;
