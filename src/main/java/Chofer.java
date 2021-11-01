@@ -21,7 +21,35 @@ public class Chofer {
         this.ubicacion = ubicacion;
     }
 
-    public void seleccionarLinea() {
+    public void seleccionarLinea(){ //"-38.738135418759, -72.59066435334556"
+        Scanner teclado = new Scanner(System.in);
+        int aux=0;
+        do {
+            mostrarMenu();
+            String seleccion = teclado.next();
+            switch (seleccion) {
+                case "1" -> {
+                    compartirUbicacion("Linea1A");
+                    break;
+                }
+                case "2" -> {
+                    compartirUbicacion("Linea8C");
+                    break;
+                }
+                case "0" -> aux = 1;
+                default -> System.err.println("Opcion ingresada no valida");
+            }
+        }while (aux==0);
+    }
+
+    private void mostrarMenu(){
+        System.out.println("***********************************************************");
+        System.out.println("------------------Seleccione una linea---------------------");
+        System.out.println("*                         MENÚ                            *");
+        System.out.println("[1]Linea1A");
+        System.out.println("[2]Linea8C");
+        System.out.println("[0]Salir");
+        System.out.println("***********************************************************");
     }
 
     public void iniciarRecorrido() {
@@ -34,17 +62,12 @@ public class Chofer {
     public void configuracionRecorrido() {
     }
 
-    public void menu() {
-    }
-
-    public void mostrar() {
-    }
     public void compartirUbicacion(String linea){
         GestorArchivos ga = new GestorArchivos("Lineas/"+linea +".csv");
-        entregarCoordenadas(ga.leerArchivo());
+        entregarCoordenadas(ga.leerArchivo(),linea);
     }
 
-    private void entregarCoordenadas(ArrayList<String> arr){
+    private void entregarCoordenadas(ArrayList<String> arr,String linea){
         /*
          * Crea un array de strings para la linea actual y lo divide en latitud y longitud, luego,
          * llama al metodo "escribirCoordenadas
@@ -53,23 +76,25 @@ public class Chofer {
 
         for (int i = 0; i < arr.size(); i++) {
             try {
-                Thread.sleep(3930);
+                System.out.println("compartiendo");
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+
             coordendas = arr.get(i).split(",");
-            escribirCoordenadas(coordendas[0], coordendas[1]);
+            escribirCoordenadas(coordendas[0], coordendas[1],linea);
         }
     }
 
-    private void escribirCoordenadas(String latitud, String longitud){
+    private void escribirCoordenadas(String latitud, String longitud,String linea){
         /*
          * Escribe la linea proporcionada por "entregarCoordenadas" en un nuevo archivo llamado "movimiento.csv"
          * que cuenta con una sola linea que se va actualizando a medida que se recibe una nueva coordenada
          * */
         try {
             List<List<String>> rows = Collections.singletonList(Arrays.asList(latitud, longitud));
-            FileWriter csvWriter = new FileWriter("movimiento.csv");
+            FileWriter csvWriter = new FileWriter("movimiento"+linea+".csv");
             for (List<String> rowData : rows) {
                 csvWriter.append(String.join(",", rowData));
                 csvWriter.append("\n");
@@ -90,8 +115,8 @@ public class Chofer {
         this.contraseña = tecla.next();
         if(validarUser(this.nombre, this.contraseña)){
             System.out.println("Bienvenido conductor");
-
-        }
+            seleccionarLinea();
+            }
         else{
             System.out.println("Usuario no registrado o contraseña erronea");
         }

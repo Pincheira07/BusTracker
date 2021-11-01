@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Encriptador {
-    private String rutaUser = "Usuarios";
     private String rutaEncrip = "UsuariosEncrip";
 
     public Encriptador(){

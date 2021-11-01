@@ -1,38 +1,61 @@
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class OperacionesPasajero {
-    public OperacionesPasajero(){
 
+public class OperacionesPasajero {
+    private String ubicacion;
+
+    public OperacionesPasajero(){
     }
 
     public void selecionarParadero() {
-
     }
 
     public void seleccionarMicro() {
-
     }
 
     public void cambiarRecorrido() {
-
     }
 
     public void mostrar() {
-
     }
 
-    public void menu() {
-
+    public void ejecutarMenuUser(){ //"-38.738135418759, -72.59066435334556"
+        Scanner teclado = new Scanner(System.in);
+        int aux=0;
+        do {
+            mostrarMenu();
+            String seleccion = teclado.next();
+            switch (seleccion) {
+                case "1" -> {
+                    mostrarUbicacion("Linea1A");
+                    break;
+                }
+                case "2" -> {
+                    mostrarUbicacion("Linea8C");
+                    break;
+                }
+                case "0" -> aux = 1;
+                default -> System.err.println("Opcion ingresada no valida");
+            }
+        }while (aux==0);
     }
 
-    public void mostrarUbicacion() {
-        ejecutarConsultaUbicacion();
+    private void mostrarMenu(){
+        System.out.println("***********************************************************");
+        System.out.println("------------------Seleccione una linea---------------------");
+        System.out.println("*                         MENÚ                            *");
+        System.out.println("[1]Linea1A");
+        System.out.println("[2]Linea8C");
+        System.out.println("[0]Salir");
+        System.out.println("***********************************************************");
     }
-    private void ejecutarConsultaUbicacion(){
-        GestorArchivos ga = new GestorArchivos("movimiento.csv");
+
+    public void mostrarUbicacion(String linea) {
+        ejecutarConsultaUbicacion(linea);
+    }
+    private void ejecutarConsultaUbicacion(String linea){
+        GestorArchivos ga = new GestorArchivos("movimiento"+linea+".csv");
         mostrarUbicacion(ga.leerArchivo());
     }
     private void mostrarUbicacion(ArrayList<String> arrayList){

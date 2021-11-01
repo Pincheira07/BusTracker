@@ -1,6 +1,12 @@
 public class Paradero {
 
     private String ubicacion;
+    private String Calle;
+    private Linea micros;
+    public Paradero(){
+
+    }
+
 
     public String getUbicacion() {
         return this.ubicacion;

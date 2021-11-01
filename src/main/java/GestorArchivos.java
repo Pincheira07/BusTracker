@@ -29,19 +29,4 @@ public class GestorArchivos {
         }
         return arr;
     }
-
-    public void escribirCoordenadas(String latitud, String longitud) {
-        try {
-            List<List<String>> rows = Collections.singletonList(Arrays.asList(latitud, longitud));
-            FileWriter csvWriter = new FileWriter("movimiento.csv");
-            for (List<String> rowData : rows) {
-                csvWriter.append(String.join(",", rowData));
-                csvWriter.append("\n");
-            }
-            csvWriter.flush();
-            csvWriter.close();
-        }catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -7,7 +7,7 @@ public class Inicio {
     public Inicio(){
     }
 
-    public void ejecutarMenu() throws IOException {
+    public void ejecutarMenu(){
         Scanner teclado = new Scanner(System.in);
         int aux=0;
         do {
@@ -18,14 +18,13 @@ public class Inicio {
                     System.out.println("Iniciando sesion...");
                     System.out.println("Bienvenido pasajero");
                     OperacionesPasajero op = new OperacionesPasajero();
-                    op.mostrarUbicacion();
+                    op.ejecutarMenuUser();
                     break;
                 }
                 case "2" -> {
                     System.out.println("Iniciando sesion...");
                     Chofer chofer = new Chofer();
                     chofer.ingresarDatosUser();
-                    chofer.compartirUbicacion("Linea1A");
                     break;
                 }
                 case "0" -> aux = 1;
