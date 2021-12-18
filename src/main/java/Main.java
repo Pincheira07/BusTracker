@@ -1,9 +1,9 @@
-import java.io.IOException;
+import com.guis.OpcionRecorrido;
+import com.guis.SelectorLineas;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-        Inicio inicio = new Inicio();
-        inicio.ejecutarMenu();
+    public static void main(String[] args) {
+        SelectorLineas sl = new SelectorLineas();
     }
 
 }
