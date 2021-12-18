@@ -23,8 +23,8 @@ public class Inicio {
                 }
                 case "2" -> {
                     System.out.println("Iniciando sesion...");
-                    Chofer chofer = new Chofer();
-                    chofer.ingresarDatosUser();
+                    //Chofer chofer = new Chofer();
+                    //chofer.ingresarDatosUser();
                     break;
                 }
                 case "0" -> aux = 1;
