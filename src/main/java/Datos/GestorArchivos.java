@@ -1,3 +1,5 @@
+package Datos;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -24,9 +26,12 @@ public class GestorArchivos {
                 arr.add(input.nextLine());
             }
         } catch (FileNotFoundException e) {
-            System.out.println("No hay recorridos disponibles");
-            ;
+            System.out.println("No hay datos disponibles");
+
         }
         return arr;
     }
+
+
+
 }

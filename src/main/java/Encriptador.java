@@ -1,4 +1,5 @@
-import java.io.*;
+import Datos.GestorArchivos;
+
 import java.util.ArrayList;
 
 public class Encriptador {

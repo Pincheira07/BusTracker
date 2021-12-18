@@ -1,8 +1,23 @@
-public class Micro {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Micro implements Serializable{
 
     private String patente;
-    private String chofer;
-    private String linea;
+    private boolean isDisponible;
+    private Linea Linea;
+    private boolean isActiva;
+
+
+    public Micro(String patente, Linea linea) {
+        this.patente = patente;
+        Linea = linea;
+        this.isDisponible = true;
+        this.isActiva = false;
+
+    }
+
+
 
     public String getPatente() {
         return this.patente;
@@ -12,20 +27,27 @@ public class Micro {
         this.patente = patente;
     }
 
-    public Chofer getChofer() {
-        throw new UnsupportedOperationException();
+
+    public Linea getLinea() {
+        return Linea;
     }
 
-    public void setChofer(Chofer chofer) {
-        throw new UnsupportedOperationException();
+    public boolean isDisponible() {
+        return isDisponible;
     }
 
-    public String getLinea() {
-        return this.linea;
+    public boolean isActiva() {
+        return isActiva;
     }
 
-    public void setLinea(String linea) {
-        this.linea = linea;
+    public void setDisponible(boolean disponible) {
+        isDisponible = disponible;
     }
 
+
+
+    @Override
+    public String toString() {
+        return "Micro{" + "patente:'" + patente + ", isDisponible:" + isDisponible + ", isActiva:" + isActiva + '}';
+    }
 }

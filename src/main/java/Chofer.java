@@ -1,3 +1,5 @@
+import Datos.GestorArchivos;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -6,8 +8,16 @@ public class Chofer {
     private String nombre;
     private String contraseña;
     private String ubicacion;
+    private Linea linea;
 
-    public Chofer() {
+    public Chofer(String nombre, String contraseña, Linea linea) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
+        this.linea = linea;
+    }
+
+    public void registrarseEnLinea(){
+
     }
     public String getNombre() {
         return this.nombre;
