@@ -1,3 +1,7 @@
+package Model;
+
+import Model.Chofer;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +31,8 @@ public class Linea implements Serializable{
         this.choferes.add(chofer);
         return chofer;
     }
+
+    
 
     public void serializarMicros(String ruta) {
         try
@@ -121,6 +127,6 @@ public class Linea implements Serializable{
 
     @Override
     public String toString() {
-        return "[" + "Linea " + numero + "]" + "";
+        return "[" + "Model.Linea " + numero + "]" + "";
     }
 }

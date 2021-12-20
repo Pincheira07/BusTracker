@@ -1,4 +1,8 @@
-import java.io.Serial;
+package Model;
+
+import Model.Chofer;
+import Model.Linea;
+
 import java.io.Serializable;
 
 public class Micro implements Serializable{
@@ -11,7 +15,7 @@ public class Micro implements Serializable{
     static final long serialVersionUID = 42L;
 
 
-    public Micro(String patente, Linea linea) {
+    public Micro(String patente, Model.Linea linea) {
         this.patente = patente;
         Linea = linea;
         this.isDisponible = true;
@@ -34,6 +38,10 @@ public class Micro implements Serializable{
         return Linea;
     }
 
+    public Chofer getChofer() {
+        return chofer;
+    }
+
     public boolean isDisponible() {
         return isDisponible;
     }
@@ -46,11 +54,12 @@ public class Micro implements Serializable{
         isDisponible = disponible;
     }
 
+    public void setActiva(boolean activa) {
+        isActiva = activa;
+    }
+
     @Override
     public String toString() {
-        return "patente:'" + patente + '\'' +
-                ", isDisponible:" + isDisponible +
-                ", isActiva:" + isActiva +
-                '}'+'\n';
+        return "patente:'" + patente;
     }
 }

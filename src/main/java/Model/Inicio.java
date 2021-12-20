@@ -1,4 +1,5 @@
-import java.io.IOException;
+package Model;
+
 import java.util.Scanner;
 
 public class Inicio {
