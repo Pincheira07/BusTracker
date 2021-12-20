@@ -16,6 +16,7 @@ public class SignIn extends javax.swing.JFrame {
    int xMouse, yMouse;
     public SignIn() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -44,6 +45,7 @@ public class SignIn extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
         setUndecorated(true);
         setResizable(false);
 
@@ -141,7 +143,7 @@ public class SignIn extends javax.swing.JFrame {
         });
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel4MouseClicked(evt);
@@ -315,9 +317,9 @@ public class SignIn extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
          javax.swing.JOptionPane.showMessageDialog(this, "Ha ingresado como "+jTextField1.getText()+" con la contraseña: "+String.valueOf(jPasswordField1.getPassword()), "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-         MicrosLlinea Micros = new MicrosLlinea ();
-        Micros.setVisible(true);
-        this.dispose();
+         SelectorLineas sl = new SelectorLineas();
+         sl.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
@@ -356,10 +358,7 @@ public class SignIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel4MousePressed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -4,18 +4,89 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f59ca8d1-bc20-4206-b749-b642406a64ee" name="Changes" comment="Commit avance 5">
+    <list default="true" id="f59ca8d1-bc20-4206-b749-b642406a64ee" name="Changes" comment="Commit final 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BusTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BusTracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/MicrosLlinea.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/MicrosLlinea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SeleccionarParadero.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SeleccionarParadero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SignIn.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/login1.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/login1.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/login1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/login1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/ProyectoVentanas.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/built-jar.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/MicrosLlinea.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SeleccionarParadero.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/SignIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/ParaderoMicros/login1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/SignIn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/build/classes/login/login1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/manifest.mf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/nbproject/build-impl.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/nbproject/genfiles.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/nbproject/private/private.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/nbproject/private/private.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/nbproject/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/nbproject/project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/movimientoLinea1A.csv" beforeDir="false" afterPath="$PROJECT_DIR$/movimientoLinea1A.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Inicio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Inicio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/OpcionRecorrido.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/OpcionRecorrido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/SelectorLineas.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SelectorLineas.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/SelectorLineas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SelectorLineas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guis/login1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/Login1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +102,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/GonzaloCaniupanH" />
+    <option name="BRANCH" value="origin/feature/MatíasPincheira" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -78,10 +149,16 @@
       <recent name="$PROJECT_DIR$/Lineas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SignIn">
-    <configuration name="BusTracker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="BusTracker" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Login1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guis.Login1" />
       <module name="BusTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,6 +166,19 @@
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="BusTracker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OpcionesRecorrido" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guis.OpcionesRecorrido" />
+      <module name="BusTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,27 +196,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BusTrackerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="login1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guis.login1" />
       <module name="BusTracker" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BusTrackerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BusTracker" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.SignIn" />
-      <item itemvalue="JUnit.BusTrackerTest" />
+      <item itemvalue="Application.login1" />
+      <item itemvalue="Application.Login1" />
+      <item itemvalue="Application.OpcionesRecorrido" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SignIn" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.BusTracker" />
-        <item itemvalue="JUnit.BusTrackerTest" />
+        <item itemvalue="Application.OpcionesRecorrido" />
+        <item itemvalue="Application.Login1" />
+        <item itemvalue="Application.SignIn" />
+        <item itemvalue="Application.login1" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639869288839</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Commit final 1">
+      <created>1640016384505</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640016384505</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -241,6 +344,7 @@
     <MESSAGE value="Commit avance 3" />
     <MESSAGE value="Commit avance 4" />
     <MESSAGE value="Commit avance 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit avance 5" />
+    <MESSAGE value="Commit final 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit final 1" />
   </component>
 </project>

@@ -5,17 +5,19 @@
  */
 package com.guis;
 
+import javax.swing.*;
 import java.awt.Color;
 
 /**
  *
  * @author Gonzalo
  */
-public class login1 extends javax.swing.JFrame {
+public class Login1 extends javax.swing.JFrame {
 
    int xMouse, yMouse;
-    public login1() {
+    public Login1() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -249,25 +251,25 @@ public class login1 extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         javax.swing.JOptionPane.showMessageDialog(this, "Ha seleccionado continuar como pasajero", "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        SignIn Ingreso = new SignIn();
-        Ingreso.setVisible(true);
-        this.dispose();
+
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-                javax.swing.JOptionPane.showMessageDialog(this, "Ha seleccionado continuar como Conductor", "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-
+        javax.swing.JOptionPane.showMessageDialog(this, "Ha seleccionado continuar como Conductor", "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        SignIn Ingreso = new SignIn();
+        Ingreso.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+
          */
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -275,25 +277,17 @@ public class login1 extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+      java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new login1().setVisible(true);
+                new Login1().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bg;
     private javax.swing.JLabel jLabel1;
