@@ -7,6 +7,8 @@ public class Micro implements Serializable{
     private boolean isDisponible;
     private Linea Linea;
     private boolean isActiva;
+    private Chofer chofer;
+    static final long serialVersionUID = 42L;
 
 
     public Micro(String patente, Linea linea) {
@@ -44,10 +46,11 @@ public class Micro implements Serializable{
         isDisponible = disponible;
     }
 
-
-
     @Override
     public String toString() {
-        return "Micro{" + "patente:'" + patente + ", isDisponible:" + isDisponible + ", isActiva:" + isActiva + '}';
+        return "patente:'" + patente + '\'' +
+                ", isDisponible:" + isDisponible +
+                ", isActiva:" + isActiva +
+                '}'+'\n';
     }
 }

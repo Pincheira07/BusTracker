@@ -5,15 +5,15 @@ import java.util.List;
 public class Linea implements Serializable{
 
     private String numero;
-    private List<String> letras;
-    private List<Chofer> choferes;
+    private List<String> recorridos;
+    private ArrayList<Chofer> choferes = new ArrayList<>();
     private ArrayList<Micro> micros = new ArrayList<>();
-    static final long serialVersionUID = 42L;
+
 
 
     public Linea(String numero, List<String> letras) {
         this.numero = numero;
-        this.letras = letras;
+        this.recorridos = letras;
     }
 
     public Micro agregarMicro(String patente ){
@@ -43,41 +43,63 @@ public class Linea implements Serializable{
         }
     }
 
-    public ArrayList<Micro> deserializarMicros(String ruta){
+    public void serializarChoferes(String ruta) {
+        try
+        {
+            FileOutputStream fos = new FileOutputStream(ruta);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(this.choferes);
+            oos.close();
+            fos.close();
+        }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+    }
 
+    public ArrayList<Micro> deserializarMicros(String ruta){
         try
         {
             FileInputStream fis = new FileInputStream(ruta);
             ObjectInputStream ois = new ObjectInputStream(fis);
-
             this.micros = (ArrayList) ois.readObject();
-
             ois.close();
             fis.close();
         }
         catch (IOException ioe)
         {
             ioe.printStackTrace();
-
         }
         catch (ClassNotFoundException c)
         {
             System.out.println("Clase no encontrada");
             c.printStackTrace();
-
         }
-
-        //Devuelvo la biblioteca
         return this.micros;
     }
 
-
-
-    public void mostrarMicros(String ruta){
-        for (Micro micro : deserializarMicros(ruta)) {
-            System.out.println(micro);
+    public ArrayList<Chofer> deserializarChoferes(String ruta){
+        try
+        {
+            FileInputStream fis = new FileInputStream(ruta);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            this.choferes = (ArrayList) ois.readObject();
+            ois.close();
+            fis.close();
         }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
+        }
+        catch (ClassNotFoundException c)
+        {
+            System.out.println("Clase no encontrada");
+            c.printStackTrace();
+        }
+        return this.choferes;
     }
+
 
     public String getNumero() {
         return this.numero;
@@ -85,8 +107,8 @@ public class Linea implements Serializable{
 
 
 
-    public List<String> getLetras() {
-        return letras;
+    public List<String> getRecorridoss() {
+        return recorridos;
     }
 
     public void setNumero(String numero) {

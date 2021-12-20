@@ -2,18 +2,23 @@ import Datos.GestorArchivos;
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.*;
 
-public class Chofer {
+public class Chofer implements Serializable {
     private String nombre;
     private String contraseña;
     private String ubicacion;
     private Linea linea;
+    private Micro micro;
 
     public Chofer(String nombre, String contraseña, Linea linea) {
         this.nombre = nombre;
         this.contraseña = contraseña;
         this.linea = linea;
+    }
+
+    public Chofer() {
     }
 
     public void registrarseEnLinea(){
