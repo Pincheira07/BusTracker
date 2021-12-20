@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f59ca8d1-bc20-4206-b749-b642406a64ee" name="Changes" comment="Commit avance 4">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" beforeDir="false" />
+    <list default="true" id="f59ca8d1-bc20-4206-b749-b642406a64ee" name="Changes" comment="Commit avance 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BusTracker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BusTracker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usuarios" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/movimiento.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/movimientoLinea1A.csv" beforeDir="false" afterPath="$PROJECT_DIR$/movimientoLinea1A.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/MicrosLlinea.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/MicrosLlinea.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/MicrosLlinea.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SeleccionarParadero.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SeleccionarParadero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SeleccionarParadero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SignIn.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/SignIn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/login1.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/login1.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVentanas/src/ParaderoMicros/login1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guis/login1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,10 +74,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/guis" />
       <recent name="$PROJECT_DIR$/Lineas" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.SignIn">
     <configuration name="BusTracker" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BusTracker" />
       <module name="BusTracker" />
@@ -89,6 +89,19 @@
     <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="BusTracker" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignIn" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.guis.SignIn" />
+      <module name="BusTracker" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.guis.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -105,10 +118,12 @@
     <list>
       <item itemvalue="Application.BusTracker" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.SignIn" />
       <item itemvalue="JUnit.BusTrackerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SignIn" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.BusTracker" />
         <item itemvalue="JUnit.BusTrackerTest" />
@@ -183,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635728296387</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Commit avance 5">
+      <created>1639869288839</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1639869288839</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -200,7 +222,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/GonzaloCaniupanH" />
+                        <option value="origin/feature/CamiloÑanco" />
                       </list>
                     </value>
                   </entry>
@@ -218,6 +240,7 @@
     <MESSAGE value="Commit avance 2" />
     <MESSAGE value="Commit avance 3" />
     <MESSAGE value="Commit avance 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit avance 4" />
+    <MESSAGE value="Commit avance 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit avance 5" />
   </component>
 </project>
