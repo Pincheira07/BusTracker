@@ -1,3 +1,5 @@
+package Model;
+
 import Datos.GestorArchivos;
 import GUIs.Mapa;
 

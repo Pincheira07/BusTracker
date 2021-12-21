@@ -1,4 +1,5 @@
-import java.io.Serial;
+package Model;
+
 import java.io.Serializable;
 
 public class Micro implements Serializable{

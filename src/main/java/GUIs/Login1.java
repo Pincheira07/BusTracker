@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.guis;
+package GUIs;
+
+import Model.Chofer;
 
 import javax.swing.*;
 import java.awt.Color;
@@ -17,6 +19,7 @@ public class Login1 extends javax.swing.JFrame {
    int xMouse, yMouse;
     public Login1() {
         initComponents();
+        setVisible(true);
         setLocationRelativeTo(null);
     }
 
@@ -250,15 +253,15 @@ public class Login1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+
         javax.swing.JOptionPane.showMessageDialog(this, "Ha seleccionado continuar como pasajero", "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        javax.swing.JOptionPane.showMessageDialog(this, "Ha seleccionado continuar como Conductor", "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-        SignIn Ingreso = new SignIn();
-        Ingreso.setVisible(true);
-        this.dispose();
+        SignIn sg = new SignIn();
+        sg.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     public static void main(String[] args) {

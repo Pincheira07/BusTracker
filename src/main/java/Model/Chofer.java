@@ -1,4 +1,7 @@
+package Model;
+
 import Datos.GestorArchivos;
+import GUIs.SignIn;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,11 +14,12 @@ public class Chofer implements Serializable {
     private String ubicacion;
     private Linea linea;
     private Micro micro;
+    private SignIn sn;
 
     public Chofer(String nombre, String contraseña, Linea linea) {
         this.nombre = nombre;
         this.contraseña = contraseña;
-        this.linea = linea;
+
     }
 
     public Chofer() {
@@ -123,21 +127,15 @@ public class Chofer implements Serializable {
     }
 
     public void ingresarDatosUser(){
-        Scanner tecla = new Scanner(System.in);
-        System.out.println("Ingrese su nombre de usuario");
-        this.nombre = tecla.next();
-        System.out.println("Ingrese la cotraseña");
-        this.contraseña = tecla.next();
         if(validarUser(this.nombre, this.contraseña)){
-            System.out.println("Bienvenido conductor");
-            seleccionarLinea();
+            sn.setVisible(true);
             }
         else{
-            System.out.println("Usuario no registrado o contraseña erronea");
+            sn.mensajeError();
         }
     }
 
-    private boolean validarUser(String usuario, String contraseña){
+    public boolean validarUser(String usuario, String contraseña){
         String[][] arr;
         arr = leerUsuario();
         assert arr != null;

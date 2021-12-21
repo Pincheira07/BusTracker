@@ -1,3 +1,7 @@
+package Model;
+
+
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +26,7 @@ public class Linea implements Serializable{
         return micro;
     }
 
-    public Chofer agregarChofer(String nombre, String contraseña ){
+    public Chofer agregarChofer(String nombre, String contraseña){
         Chofer chofer = new Chofer(nombre,contraseña,this);
         this.choferes.add(chofer);
         return chofer;

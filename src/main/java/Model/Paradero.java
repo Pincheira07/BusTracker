@@ -1,3 +1,4 @@
+package Model;
 public class Paradero {
 
     private String ubicacion;

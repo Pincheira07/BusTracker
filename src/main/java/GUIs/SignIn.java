@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.guis;
+package GUIs;
 
+import Model.Chofer;
+
+import javax.swing.*;
 import java.awt.Color;
 
 /**
@@ -316,10 +319,16 @@ public class SignIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1MousePressed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-         javax.swing.JOptionPane.showMessageDialog(this, "Ha ingresado como "+jTextField1.getText()+" con la contraseña: "+String.valueOf(jPasswordField1.getPassword()), "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
-         SelectorLineas sl = new SelectorLineas();
-         sl.setVisible(true);
-         this.dispose();
+        Chofer chofer = new Chofer();
+        if(chofer.validarUser(jTextField1.getText(),String.valueOf(jPasswordField1.getPassword()))){
+            javax.swing.JOptionPane.showMessageDialog(this, "Ha ingresado como "+jTextField1.getText()+" con la contraseña: "+String.valueOf(jPasswordField1.getPassword()), "lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            SelectorLineas sl = new SelectorLineas();
+            sl.setVisible(true);
+            this.dispose();
+        }
+        else {
+            mensajeError();
+        }
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
@@ -389,6 +398,10 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
     }
+    public void mensajeError(){
+        javax.swing.JOptionPane.showMessageDialog(this,"Usuario no encontrado","lOGIN", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
@@ -406,5 +419,21 @@ public class SignIn extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField jTextField1;
-    // End of variables declaration//GEN-END:variables
+
+    public JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    public void setjPasswordField1(JPasswordField jPasswordField1) {
+        this.jPasswordField1 = jPasswordField1;
+    }
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+// End of variables declaration//GEN-END:variables
 }
