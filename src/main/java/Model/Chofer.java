@@ -7,16 +7,16 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
 
-public class Chofer implements Serializable {
+public class Chofer{
     private String nombre;
-    private String contraseña;
+    private String pass;
     private String ubicacion;
     private Linea linea;
     private Micro micro;
 
-    public Chofer(String nombre, String contraseña, Linea linea) {
+    public Chofer(String nombre, String pass, Linea linea) {
         this.nombre = nombre;
-        this.contraseña = contraseña;
+        this.pass = pass;
         this.linea = linea;
     }
 
@@ -148,8 +148,9 @@ public class Chofer implements Serializable {
          * llama al metodo "escribirCoordenadas
          * */
         String[] coordendas;
-        System.out.println("compartiendo ubicacion...");
+
         for (int i = 0; i < arr.size(); i++) {
+            System.out.println("compartiendo ubicacion...");
             try {
                 Thread.sleep(3750);
             } catch (InterruptedException e) {
@@ -186,8 +187,8 @@ public class Chofer implements Serializable {
         System.out.println("Ingrese su nombre de usuario");
         this.nombre = tecla.next();
         System.out.println("Ingrese la cotraseña");
-        this.contraseña = tecla.next();
-        if(validarUser(this.nombre, this.contraseña)){
+        this.pass = tecla.next();
+        if(validarUser(this.nombre, this.pass)){
             System.out.println("Bienvenido conductor");
             seleccionarLinea();
             }
@@ -196,12 +197,12 @@ public class Chofer implements Serializable {
         }
     }
 
-    private boolean validarUser(String usuario, String contraseña){
+    private boolean validarUser(String usuario, String pass){
         String[][] arr;
         arr = leerUsuario();
         assert arr != null;
         for (String[] strings : arr) {
-            if (strings[0].equals(usuario) && strings[1].equals(contraseña)) {
+            if (strings[0].equals(usuario) && strings[1].equals(pass)) {
                 return true;
             }
         }
@@ -236,5 +237,9 @@ public class Chofer implements Serializable {
             arr.add(palabra);
         }
         return arr;
+    }
+
+    public void setLinea(Linea linea) {
+        this.linea = linea;
     }
 }
