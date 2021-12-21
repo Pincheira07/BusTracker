@@ -181,14 +181,18 @@ public class Chofer implements Serializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public void ingresarDatosUser(){
+    }public void ingresarDatosUser(){
+        Scanner tecla = new Scanner(System.in);
+        System.out.println("Ingrese su nombre de usuario");
+        this.nombre = tecla.next();
+        System.out.println("Ingrese la cotraseña");
+        this.contraseña = tecla.next();
         if(validarUser(this.nombre, this.contraseña)){
-            sn.setVisible(true);
-            }
+            System.out.println("Bienvenido conductor");
+            seleccionarLinea();
+        }
         else{
-            sn.mensajeError();
+            System.out.println("Usuario no registrado o contraseña erronea");
         }
     }
 
