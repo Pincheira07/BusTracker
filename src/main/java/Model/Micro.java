@@ -35,6 +35,10 @@ public class Micro implements Serializable{
         return Linea;
     }
 
+    public Chofer getChofer() {
+        return chofer;
+    }
+
     public boolean isDisponible() {
         return isDisponible;
     }
@@ -47,11 +51,12 @@ public class Micro implements Serializable{
         isDisponible = disponible;
     }
 
+    public void setActiva(boolean activa) {
+        isActiva = activa;
+    }
+
     @Override
     public String toString() {
-        return "patente:'" + patente + '\'' +
-                ", isDisponible:" + isDisponible +
-                ", isActiva:" + isActiva +
-                '}'+'\n';
+        return "patente:'" + patente;
     }
 }

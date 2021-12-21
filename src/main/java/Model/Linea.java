@@ -1,7 +1,5 @@
 package Model;
 
-
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -125,6 +123,6 @@ public class Linea implements Serializable{
 
     @Override
     public String toString() {
-        return "[" + "Linea " + numero + "]" + "";
+        return "[" + "Model.Linea " + numero + "]" + "";
     }
 }

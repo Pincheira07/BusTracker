@@ -25,9 +25,61 @@ public class Chofer implements Serializable {
     public Chofer() {
     }
 
-    public void registrarseEnLinea(){
+    public void menuSeleccionarMicro(String ruta){
+        Scanner teclado = new Scanner(System.in);
+        int aux=0;
+        do {
+            String seleccion = teclado.next();
+            switch (seleccion) {
+                case "1" -> {
+                    seleccionarMicro(ruta, 0);
+                    iniciarRecorrido();
+                    break;
+                }
+                case "2" -> {
+                    seleccionarMicro(ruta,1);
+                    iniciarRecorrido();
+                    break;
+                }
+                case "3" -> {
+                    seleccionarMicro(ruta,2);
+                    iniciarRecorrido();
+                }
+                case "0" -> aux = 1;
+                default -> System.err.println("Opcion ingresada no valida");
+            }
+        }while (aux==0);
 
     }
+
+    public int seleccionarMicro(String ruta, int index){
+        int aux = 1;
+        if (validarDisponibilidadMicro(ruta, index)){
+            this.micro = linea.getMicros(ruta).get(0);
+            micro.setDisponible(false);
+            micro.setActiva(true);
+            linea.serializarMicros(ruta);
+        }else{
+            System.out.println("Micro no disponible");
+            aux = 0;
+        }
+        return aux;
+    }
+
+    public boolean validarDisponibilidadMicro(String ruta, int index){
+        return this.linea.getMicros(ruta).get(index).isDisponible();
+    }
+
+
+
+    public void mostrarMicros(Linea linea, String ruta){
+        int i = 1;
+        for (Micro micro:linea.getMicros(ruta)) {
+            System.out.println("["+ i +"]"+" "+micro);
+            i++;
+        }
+    }
+
     public String getNombre() {
         return this.nombre;
     }
@@ -40,7 +92,8 @@ public class Chofer implements Serializable {
         this.ubicacion = ubicacion;
     }
 
-    public void seleccionarLinea(){ //"-38.738135418759, -72.59066435334556"
+    public void seleccionarLinea(){
+        MinisterioTransporte ministerioTransporte = new MinisterioTransporte();
         Scanner teclado = new Scanner(System.in);
         int aux=0;
         do {
@@ -48,11 +101,15 @@ public class Chofer implements Serializable {
             String seleccion = teclado.next();
             switch (seleccion) {
                 case "1" -> {
-                    compartirUbicacion("Linea1A");
+                    this.linea=ministerioTransporte.getLineas().get(0);
+                    mostrarMicros(this.linea, "Lineas/Micros/MicrosLinea1.txt");
+                    menuSeleccionarMicro("Lineas/Micros/MicrosLinea1.txt");
                     break;
                 }
                 case "2" -> {
-                    compartirUbicacion("Linea8C");
+                    this.linea=ministerioTransporte.getLineas().get(7);
+                    mostrarMicros(this.linea, "Lineas/Micros/MicrosLinea8.txt");
+                    menuSeleccionarMicro("Lineas/Micros/MicrosLinea8.txt");
                     break;
                 }
                 case "0" -> aux = 1;
@@ -65,14 +122,15 @@ public class Chofer implements Serializable {
         System.out.println("***********************************************************");
         System.out.println("------------------Seleccione una linea---------------------");
         System.out.println("*                         MENÚ                            *");
-        System.out.println("[1]Linea1A");
-        System.out.println("[2]Linea8C");
+        System.out.println("[1]Linea1");
+        System.out.println("[2]Linea8");
         System.out.println("[0]Salir");
         System.out.println("***********************************************************");
     }
 
     public void iniciarRecorrido() {
-        compartirUbicacion("Linea1A");
+        compartirUbicacion();
+
     }
 
     public void opcionesRecorrido() {
@@ -81,39 +139,38 @@ public class Chofer implements Serializable {
     public void configuracionRecorrido() {
     }
 
-    public void compartirUbicacion(String linea){
-        GestorArchivos ga = new GestorArchivos("Lineas/"+linea +".csv");
-        entregarCoordenadas(ga.leerArchivo(),linea);
+    public void compartirUbicacion(){
+        GestorArchivos ga = new GestorArchivos("Lineas/Linea"+this.linea.getNumero()+".csv");
+        entregarCoordenadas(ga.leerArchivo());
     }
 
-    private void entregarCoordenadas(ArrayList<String> arr,String linea){
+    private void entregarCoordenadas(ArrayList<String> arr){
         /*
          * Crea un array de strings para la linea actual y lo divide en latitud y longitud, luego,
          * llama al metodo "escribirCoordenadas
          * */
         String[] coordendas;
-
+        System.out.println("compartiendo ubicacion...");
         for (int i = 0; i < arr.size(); i++) {
             try {
-                System.out.println("compartiendo");
-                Thread.sleep(2000);
+                Thread.sleep(3750);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
             coordendas = arr.get(i).split(",");
-            escribirCoordenadas(coordendas[0], coordendas[1],linea);
+            escribirCoordenadas(coordendas[0], coordendas[1]);
         }
     }
 
-    private void escribirCoordenadas(String latitud, String longitud,String linea){
+    private void escribirCoordenadas(String latitud, String longitud){
         /*
          * Escribe la linea proporcionada por "entregarCoordenadas" en un nuevo archivo llamado "movimiento.csv"
          * que cuenta con una sola linea que se va actualizando a medida que se recibe una nueva coordenada
          * */
         try {
             List<List<String>> rows = Collections.singletonList(Arrays.asList(latitud, longitud));
-            FileWriter csvWriter = new FileWriter("movimiento"+linea+".csv");
+            FileWriter csvWriter = new FileWriter("Lineas/Choferes/movimiento "+this.micro.getPatente()+".csv");
             for (List<String> rowData : rows) {
                 csvWriter.append(String.join(",", rowData));
                 csvWriter.append("\n");
